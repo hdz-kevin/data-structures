@@ -22,42 +22,55 @@ public class App {
          * Gestión de llamadas en funciones (Call Stack)
          */
 
-        Stack<String> stack = new Stack<String>();
+        Stack<String> games = new Stack<String>();
 
         // Agregar elementos al stack (inserta cada uno en la parte superior)
-        stack.push("Minecraft");
-        stack.push("Skyrim");
-        stack.push("DOOM");
-        stack.push("Borderlands");
-        stack.push("FFVII");
+        games.push("Minecraft");
+        games.push("Skyrim");
+        games.push("DOOM");
+        games.push("Borderlands");
+        games.push("FFVII");
 
         // Comprobar si el stack está vacío
-        System.out.println("Is empty: " + stack.empty());
+        System.out.println("Is empty: " + games.empty());
 
-        System.out.println(stack);
+        System.out.println(games);
 
-        // // Eliminar y obtener el elemento superior
-        // String topGame = stack.pop();
-        // System.out.println("Top game: " + topGame);
-        // System.out.println(stack);
+        // Eliminar y obtener el elemento superior
+        String topGame = games.pop();
+        System.out.println("Top game: " + topGame);
+        System.out.println(games);
 
-        // // Acceder al elemento superior sin eliminarlo
-        // System.out.println(stack.peek());
-        // System.out.println(stack);
+        // Acceder al elemento superior sin eliminarlo
+        System.out.println(games.peek());
+        System.out.println(games);
 
-        // Buscar un elemento
-        // Retorna la posición del elemento (basada en 1) desde la parte superior
+
+
+        /** Buscar elementos en un Stack */
+
+        Stack<String> languages = new Stack<String>();
+        languages.push("Java");
+        languages.push("Python");
+        languages.push("C++");
+        languages.push("Rust");
+
+        System.out.println(languages); // [Java, Python, C++, Rust]
+
+        // Retorna la posición del elemento (1-based) desde la parte superior
         // El elemento superior es la posición 1
-        System.out.println(stack.search("FFVII")); // 1
-        System.out.println(stack.search("DOOM")); // 3
-        System.out.println(stack.search("Not Exists")); // -1
+        System.out.println(languages.search("Rust")); // 1
+        System.out.println(languages.search("Python")); // 3
+
+        // Para elementos que no existen retorna -1
+        System.out.println(languages.search("PHP")); // -1
+
+
 
         // Esto puede causar una exepción OutOfMemoryError, que ocurre cuando el espacio en la memoria heap
         // no es suficiente para crear un objeto.
-        for (int i = 0; i < 1000_000_000; i++) {
-            stack.push("Fallout76");
-        }
-
-        System.out.println(stack);
+        // for (int i = 0; i < 1000_000_000; i++) {
+        //     languages.push("Go");
+        // }
     }
 }
