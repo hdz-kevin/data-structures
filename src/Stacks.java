@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class App {
+public class Stacks {
     public static void main(String[] args) throws Exception {
 
         /**
@@ -16,7 +16,7 @@ public class App {
          * empty: Verifica si el stack está vacío o no
          * size: Obtener el tamaño del stack
          * 
-         * Usos de Stack
+         * Usos de Stacks:
          * Deshacer y rehacer (Undo/Redo) en editores de texto
          * Historial de navegación en browsers (<- ->)
          * Gestión de llamadas en funciones (Call Stack)
