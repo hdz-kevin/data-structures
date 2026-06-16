@@ -10,16 +10,16 @@ public class Stacks {
          * donde el último elemento añadido es el primero en ser eliminado.
          * 
          * Operaciones Principales:
-         * push: Agregar un elemento al stack
-         * pop: Eliminar el elemento superior del stack
-         * peek: Obtener el elemento superior sin eliminarlo
-         * empty: Verifica si el stack está vacío o no
-         * size: Obtener el tamaño del stack
+         *  push: Agregar un elemento al stack
+         *  pop: Eliminar el elemento superior del stack
+         *  peek: Obtener el elemento superior sin eliminarlo
+         *  empty: Verifica si el stack está vacío o no
+         *  size: Obtener el tamaño del stack
          * 
          * Usos de Stacks:
-         * Deshacer y rehacer (Undo/Redo) en editores de texto
-         * Historial de navegación en browsers (<- ->)
-         * Gestión de llamadas en funciones (Call Stack)
+         *  Deshacer y rehacer (Undo/Redo) en editores de texto
+         *  Historial de navegación en browsers (<- ->)
+         *  Gestión de llamadas en funciones (Call Stack)
          */
 
         Stack<String> games = new Stack<String>();
