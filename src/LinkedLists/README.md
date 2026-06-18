@@ -3,7 +3,7 @@
 Una **Lista Enlazada** es una estructura de datos lineal que está compuesta por una cadena de Nodos.
 
 Cada Nodo contiene dos partes:
-   - Un objeto o dato que necesitamos almacenar
+   - El objeto o dato que necesitamos almacenar
    - Un puntero o referencia hacía el siguiente Nodo en la lista
 
 <br/>
@@ -18,9 +18,9 @@ hasta llegar al último (Tail/Cola), el cual tiene un valor **null** como punter
 
 <br/>
 
-Las Listas Enlazadas tienen ventaja con los arrays a la hora de insertar y eliminar elementos. Mientras que en
-los arrays es necesario desplazar los elementos que están a la derecha de la posición del elemento a insertar o eliminar,
-en las Listas Enlazadas solo se modifican los punteros de los Nodos previo y siguiente al Nodo a insertar/eliminar.
+Las Listas Enlazadas tienen ventaja con los arrays a la hora de insertar y eliminar elementos. Mientras que en los arrays es
+necesario hacer desplazamientos de elementos, en las Listas Enlazadas solo se modifican los punteros de los Nodos previo y
+siguiente
 
 <hr/>
 
