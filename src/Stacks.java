@@ -10,7 +10,7 @@ public class Stacks {
          * donde el último elemento añadido es el primero en ser eliminado.
          * 
          * Operaciones Principales:
-         *  push: Agregar un elemento al stack
+         *  push: Agregar un elemento a la parte superior del stack
          *  pop: Eliminar el elemento superior del stack
          *  peek: Obtener el elemento superior sin eliminarlo
          *  empty: Verifica si el stack está vacío o no
