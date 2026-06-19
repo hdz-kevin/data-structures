@@ -1,4 +1,4 @@
-## Listas Enlazadas / Linked Lists
+## Linked List - Listas Enlazadas
 
 Una **Lista Enlazada** es una estructura de datos lineal que está compuesta por una cadena de Nodos.
 
