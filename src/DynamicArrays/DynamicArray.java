@@ -2,23 +2,44 @@ package DynamicArrays;
 
 import java.util.Arrays;
 
+/**
+ * Esta clase representa el funcionamiento y las operaciones principales de un DynamicArray o ArregloDinamico.
+ * Tiene una capacidad dinámica, es decir, no tiene un límite en cuanto a la cantidad de elementos que pueda
+ * contener, su capacidad aumenta o disminuye automáticamente a medida que se vayan insertando o eliminando
+ * elementos.
+ * 
+ * Operaciones/Métodos principales:
+ *   add(Object item)                -  Agrega un nuevo elemento al final
+ *   insert(int index, Object item)  -  Inserta un nuevo elemento en un índice específico
+ *   delete(Object item)             -  Elimina un elemento del array
+ *   search(Object item)             -  Busca un elemento, retornando su índice en el array o -1 si no existe
+ *   isEmpty()                       -  Comprueba si el array está vacio
+ */
 public class DynamicArray {
-    /** The total of non-null elements within static array */
+    /**
+     * El tamaño actual del array. Es la cantidad de elementos que se han ingresado.
+     */
     int size = 0;
-    /** The current capacity of the static array */
+
+    /**
+     * La capacidad del array. Es la capacidad máxima actual que aumenta o disminuye dinámicamente.
+     */
     int capacity = 10;
-    /** Static array where the elements are stored */
+
+    /**
+     * Un arreglo estandar de capacidad estática usado internamente para almacenar los elementos.
+     */
     Object[] array;
 
     /**
-     * Instance a DynamicArray with default initial capacity
+     * Instancia un nuevo DynamicArray con una capacidad inicial por defecto de 10.
      */
     public DynamicArray() {
         this.array = new Object[this.capacity];
     }
 
     /**
-     * Instance a DynamicArray with a custom initial capacity
+     * Crea una nueva instancia con una capacidad inicial específica
      * 
      * @param initialCapacity
      */
@@ -46,7 +67,15 @@ public class DynamicArray {
         }
     }
 
+    /**
+     * Inserta un nuevo elemento en un índice específico en el array, desplazando hacía la derecha
+     * los elementos necesarios.
+     *
+     * @param index
+     * @param item
+     */
     public void insert(int index, Object item) {
+        // Desplazar hacía la derecha los elementos posteriores al índice.
         for (int i = this.size; i > index; i--) {
             this.array[i] = this.array[i - 1];
         }
@@ -60,14 +89,13 @@ public class DynamicArray {
     }
 
     /**
-     * Elimina el item y desplaza los elementos posteriores hacia la izquierda
-     * para rellenar el espacio.
-     * 
+     * Elimina el item y desplaza los elementos posteriores hacia la izquierda para rellenar el espacio.
+     *
      * @param item
      */
     public void delete(Object item) {
         int index = -1;
-        
+
         // Buscar el índice del item
         for (int i = 0; i < size; i++) {
             if (this.array[i] == item) {
@@ -91,6 +119,11 @@ public class DynamicArray {
         }
     }
 
+    /**
+     * Busca un elemento y retorna su índice, si el elemento no existe retorna -1.
+     * 
+     * @param item
+     */
     public int search(Object item) {
         for (int i = 0; i < size; i++) {
             if (this.array[i] == item) {
@@ -101,6 +134,10 @@ public class DynamicArray {
         return -1;
     }
 
+    /**
+     * Incrementa la capacidad del array al doble de su capacidad actual, manteniendo los elementos
+     * que contiene hasta el momento.
+     */
     void grow() {
         int newCapacity = (int) (this.capacity * 2);
         Object[] newArray = new Object[newCapacity];
@@ -113,6 +150,9 @@ public class DynamicArray {
         this.array = newArray;
     }
 
+    /**
+     * Acorta la capacidad del array a la mitad, mantieniendo los elementos que contiene hasta el momento.
+     */
     private void shrink() {
         int newCapacity = (int) (this.capacity / 2);
         Object[] newArray = new Object[newCapacity];
@@ -125,6 +165,9 @@ public class DynamicArray {
         this.array = newArray;
     }
 
+    /**
+     * Comprueba si el arreglo está vacio
+     */
     public boolean isEmpty() {
         return this.size == 0;
     }
